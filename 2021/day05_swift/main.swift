@@ -7,21 +7,8 @@
 
 import Foundation
 
-import Foundation
-
-let file = "input-5.txt"
-var inputFile = ""
- 
-if let dir = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first {
- 
-    let fileURL = dir.appendingPathComponent(file)
- 
-    do {
-        inputFile = try String(contentsOf: fileURL, encoding: .utf8)
-    } catch let error as NSError {
-        print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
-    }
-}
+let filePath = URL(fileURLWithPath: "input.txt")
+let inputFile: String = try! String(contentsOf: filePath, encoding: .utf8)
 
 func getPipes(inputFile: String) -> [[String]] {
     var pipes: [[String]] = []
@@ -112,10 +99,8 @@ func getPipePoints(pipe: [String], vertical: Bool) -> [[Int]] {
                     points.append([x1+d, y1+d])
                 }
             }
-
         }
     }
-    
     return points
 }
 

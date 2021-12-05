@@ -7,22 +7,9 @@
 
 import Foundation
  
-let file = "input.txt"
- 
-var inputFile = ""
- 
-if let dir = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first {
- 
-    let fileURL = dir.appendingPathComponent(file)
- 
-    do {
-        inputFile = try String(contentsOf: fileURL, encoding: .utf8)
-    } catch let error as NSError {
-        print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
-        
-    }
-}
- 
+let filePath = URL(fileURLWithPath: "input.txt")
+let inputFile: String = try! String(contentsOf: filePath, encoding: .utf8)
+
 var lastLine: Int = 0
 var increaseCounter: Int = 0
 
