@@ -1,6 +1,4 @@
 # Advent of Code
 
-Solutions to the puzzles from [Advent of Code](https://adventofcode.com/).
-
-## Getting started
-Change directory to one of the puzzle directories and run `swift main.swift`
+Solutions to the puzzles from [Advent of Code](https://adventofcode.com/).  
+Not optimized for performance or readability.
