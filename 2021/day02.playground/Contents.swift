@@ -1,7 +1,9 @@
 import Foundation
 
-guard let inputFile = try? String(contentsOf: Bundle.main.url(forResource: "input", withExtension: "txt")!, encoding: .utf8) else {
-    fatalError("Cannot read file input.txt")
+let input = "input"  // change to "test" for example data
+let inputPath  = FileManager.default.fileExists(atPath: "Resources/\(input).txt") ? URL(fileURLWithPath: "Resources/\(input).txt") : Bundle.main.url(forResource: input, withExtension: "txt")!
+guard let inputFile = try? String(contentsOf: inputPath, encoding: .utf8) else {
+    fatalError("Cannot read \(input) file \(inputPath)")
 }
 
 var commands: [String] = []
