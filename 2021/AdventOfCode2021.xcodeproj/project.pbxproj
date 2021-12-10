@@ -146,6 +146,7 @@
 		D9AB01EF276354C400D5CE74 /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		D9AB01FF276354F000D5CE74 /* day10_swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = day10_swift; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9AB0201276354F000D5CE74 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		D9AB02062763941D00D5CE74 /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 		D9D37B59275CDE7F005713C6 /* day05_swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = day05_swift; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D37B5B275CDE7F005713C6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D9E905A9275B9EE0003E0A98 /* day04_swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = day04_swift; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +272,7 @@
 		D9AB0200276354F000D5CE74 /* day10_swift */ = {
 			isa = PBXGroup;
 			children = (
+				D9AB02062763941D00D5CE74 /* input.txt */,
 				D9AB0201276354F000D5CE74 /* main.swift */,
 			);
 			path = day10_swift;
