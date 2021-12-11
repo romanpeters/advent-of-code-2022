@@ -92,6 +92,20 @@ class OctopusGrid {
             }
         }
     }
+    
+    private func updateGrid() {
+        for octopus in octopi {
+            grid[octopus.y][octopus.x] = octopus.energyLevel
+        }
+    }
+    
+    func printGrid() {
+        updateGrid()
+        for row in grid {
+            print(row.map( { String($0) }).joined(separator: " "))
+        }
+    }
+    
 }
 
 class Octopus {
@@ -137,19 +151,42 @@ struct Controller {
         }
         octos.hasFlashed = []
     }
+    
+    func clearTerminalOutput() {
+        print("\u{001B}[2J")
+    }
+    
+    func printFrame(step: Int? = nil) {
+        clearTerminalOutput()
+        if (step != nil) {
+            print("Step \(step!)")
+        }
+        octos.printGrid()
+        usleep(100000)
+    }
 }
+
+
 
 
 var octopusGrid = createGrid(inputFile: inputFile)
 var controller = Controller(octos: octopusGrid)
 
-for _ in 1...100 {
+let animation = true // set to false to disable visualisation
+
+for n in 1...100 {
     controller.step1()
     controller.step2()
     controller.step3()
+    if animation {
+        controller.printFrame(step: n)
+    }
 }
 
-print("Solution part 1 \(controller.octos.flashes)")
+print("Solution part 1: \(controller.octos.flashes)")
+if animation {
+    sleep(3)
+}
 
 
 octopusGrid = createGrid(inputFile: inputFile)
@@ -164,7 +201,15 @@ while true {
         break
     }
     controller.step3()
+    if animation {
+        controller.printFrame(step: n)
+    }
 }
-
 print("Solution part 2: \(n)")
 
+if animation {
+    sleep(3)
+    controller.clearTerminalOutput()
+    print("Solution part 1: \(controller.octos.flashes)")
+    print("Solution part 2: \(n)")
+}
