@@ -1,0 +1,2 @@
+language = "swift"
+run = "read -p 'Which day do you want to run? [01-25]: ' DAY && cd 2021/day${DAY}.playground && swift Contents.swift"
