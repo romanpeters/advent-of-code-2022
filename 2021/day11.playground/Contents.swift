@@ -1,12 +1,11 @@
 import Foundation
 
-let input = CommandLine.arguments.count > 1 ? CommandLine.arguments[1] : "test" // change to "test" for example data
+let input = CommandLine.arguments.last == "test" ? "test" : "input" // change "input" to "test" for example data
 let inputPath  = FileManager.default.fileExists(atPath: "Resources/\(input).txt") ?
     URL(fileURLWithPath: "Resources/\(input).txt") : Bundle.main.url(forResource: input, withExtension: "txt")!
 guard let inputFile = try? String(contentsOf: inputPath, encoding: .utf8) else {
     fatalError("Cannot read \(input) file \(inputPath)")
 }
-
 
 func createGrid(inputFile: String) -> OctopusGrid {
     var grid: [[Int]] = []
@@ -156,10 +155,13 @@ struct Controller {
         print("\u{001B}[2J")
     }
     
-    func printFrame(step: Int? = nil) {
+    func printFrame(step: Int? = nil, flashes: Bool = true) {
         clearTerminalOutput()
         if (step != nil) {
             print("Step \(step!)")
+        }
+        if flashes {
+            print("Flashes \(octos.flashes)")
         }
         octos.printGrid()
         usleep(100000)

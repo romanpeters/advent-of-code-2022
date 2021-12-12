@@ -1,7 +1,8 @@
 import Foundation
 
-let input = CommandLine.arguments.count > 1 ? CommandLine.arguments[1] : "input" // change to "test" for example data
-let inputPath  = FileManager.default.fileExists(atPath: "Resources/\(input).txt") ? URL(fileURLWithPath: "Resources/\(input).txt") : Bundle.main.url(forResource: input, withExtension: "txt")!
+let input = CommandLine.arguments.last == "test" ? "test" : "input" // change "input" to "test" for example data
+let inputPath  = FileManager.default.fileExists(atPath: "Resources/\(input).txt") ?
+    URL(fileURLWithPath: "Resources/\(input).txt") : Bundle.main.url(forResource: input, withExtension: "txt")!
 guard let inputFile = try? String(contentsOf: inputPath, encoding: .utf8) else {
     fatalError("Cannot read \(input) file \(inputPath)")
 }
