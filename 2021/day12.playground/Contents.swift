@@ -128,7 +128,8 @@ func walk(map: Map, tinyCaveVisits: Int = 1) -> [Path] {
                             // add path
                             path.nodes.append(newNode)
                         
-                            if newNode.isSmall && path.visitedNode(name: newNode.name) == tinyCaveVisits {
+                            if (newNode.isSmall && path.visitedNode(name: newNode.name) == tinyCaveVisits) &&
+                                path.tinyCaveVisitLimitReached == false {
                                 path.tinyCaveVisitLimitReached = true
                             }
                             if path.nodes.last!.name == "end" {
