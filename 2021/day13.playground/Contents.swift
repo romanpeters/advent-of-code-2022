@@ -94,9 +94,9 @@ func printPaper(paper: [[Int]]) {
         output = ""
         for dot in line {
             if dot > 0 {
-                output.append("#")
+                output.append("█")
             } else {
-                output.append(".")
+                output.append(" ")
             }
         }
         print(output)
