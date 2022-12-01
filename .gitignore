@@ -94,7 +94,6 @@ iOSInjectionProject/
 # Python
 __pycache__/
 .ipynb_checkpoints/
-*.so
 
 # Environments
 .env
