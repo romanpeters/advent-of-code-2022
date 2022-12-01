@@ -1,2 +1,0 @@
-language = "swift"
-run = "read -p 'Which day do you want to run? [01-25]: ' DAY && read -p 'Do you want to use input.txt or the test data [i/t]: ' INPUT && cd 2021-swift.playground/Pages/day${DAY}.xcplaygroundpage && echo Starting... && if [ $INPUT = t ]; then swift Contents.swift test; else swift Contents.swift; fi"

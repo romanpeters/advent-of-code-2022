@@ -12,5 +12,3 @@ repos:
     hooks:
       - id: black-jupyter
         language_version: python3.10
-
-
