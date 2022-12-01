@@ -1,4 +1,8 @@
+# development
 jupyter==1.0.0
 black[jupyter]==22.10.0
 pre-commit==2.20.0
 jinja-cli==1.2.2
+
+# puzzles
+matplotlib==3.6.2
