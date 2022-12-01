@@ -4,7 +4,7 @@
 # usage: ./aoc.sh <command>
 # commands:
 #   - init - setup dev environment
-#   - build - compile utils_.c to utils_.so
+#   - build - compile utilsc.c to utilsc.so
 #   - run - start jupyter notebook server
 #   - new - create new notebook
 #   - check - run pre-commit hook and check for errors
@@ -23,13 +23,13 @@ function init() {
     fi
     pip install -r requirements.txt
     pre-commit install
-    cc -shared -fPIC -o utils_.so utils_.c
+    cc -shared -fPIC -o utilsc.so utilsc.c
     echo "environment setup complete"
 }
 
 function build() {
-    cc -shared -fPIC -o utils_.so utils_.c
-    echo "utils_.so built"
+    cc -shared -fPIC -o utilsc.so utilsc.c
+    echo "utilsc built"
 }
 
 function run() {
@@ -39,7 +39,7 @@ function run() {
 
 function new() {
     # check for existing notebooks
-    if [ -z "$(ls -A | grep day01.ipynb)" ]; then
+    if [ -z "$(ls -A notebooks)" ]; then
         # no notebooks exist, create first notebook
         echo "no notebooks exist, creating first notebook"
         mkdir -p input notebooks
@@ -48,7 +48,7 @@ function new() {
         echo "day01.ipynb created"
     else
         # notebooks exist, create new notebook
-        last_notebook=$(ls -1 | grep day | tail -n 1)
+        last_notebook=$(ls -1 notebooks | tail -n 1)
         last_day=$(echo $last_notebook | cut -d'.' -f1 | cut -d'y' -f2)
         new_day=$((last_day + 1))
         touch input/day$(printf "%02d" $new_day).txt
@@ -83,7 +83,7 @@ case $1 in
         echo "usage: source|sh ./aoc.sh <command>"
         echo "commands:"
         echo "  - init - setup dev environment"
-        echo "  - build - compile utils_.c to utils_.so"
+        echo "  - build - compile utilsc.c to utilsc.so"
         echo "  - run - start jupyter notebook server"
         echo "  - new - create new notebook"
         echo "  - check - run pre-commit hook and check for errors"

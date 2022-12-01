@@ -14,32 +14,22 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 1,
-   "outputs": [
-    {
-     "ename": "FileNotFoundError",
-     "evalue": "[Errno 2] No such file or directory: '../input/{{ day }}.txt'",
-     "output_type": "error",
-     "traceback": [
-      "\u001B[0;31m---------------------------------------------------------------------------\u001B[0m",
-      "\u001B[0;31mFileNotFoundError\u001B[0m                         Traceback (most recent call last)",
-      "Cell \u001B[0;32mIn[1], line 9\u001B[0m\n\u001B[1;32m      5\u001B[0m \u001B[38;5;28;01mfrom\u001B[39;00m \u001B[38;5;21;01mctypes\u001B[39;00m \u001B[38;5;28;01mimport\u001B[39;00m CDLL\n\u001B[1;32m      7\u001B[0m c_utils \u001B[38;5;241m=\u001B[39m CDLL(\u001B[38;5;124m\"\u001B[39m\u001B[38;5;124mutils_.so\u001B[39m\u001B[38;5;124m\"\u001B[39m)\n\u001B[0;32m----> 9\u001B[0m \u001B[38;5;28;01mwith\u001B[39;00m \u001B[38;5;28;43mopen\u001B[39;49m\u001B[43m(\u001B[49m\u001B[38;5;124;43m\"\u001B[39;49m\u001B[38;5;124;43m../input/\u001B[39;49m\u001B[38;5;124;43m{{\u001B[39;49m\u001B[38;5;124;43m day }}.txt\u001B[39;49m\u001B[38;5;124;43m\"\u001B[39;49m\u001B[43m)\u001B[49m \u001B[38;5;28;01mas\u001B[39;00m f:\n\u001B[1;32m     10\u001B[0m     INPUT \u001B[38;5;241m=\u001B[39m \u001B[38;5;28mlist\u001B[39m(\u001B[38;5;28mmap\u001B[39m(\u001B[38;5;28mstr\u001B[39m, f\u001B[38;5;241m.\u001B[39mreadlines()))\n",
-      "File \u001B[0;32m~/Projects/adventofcode/2022-python/venv/lib/python3.10/site-packages/IPython/core/interactiveshell.py:282\u001B[0m, in \u001B[0;36m_modified_open\u001B[0;34m(file, *args, **kwargs)\u001B[0m\n\u001B[1;32m    275\u001B[0m \u001B[38;5;28;01mif\u001B[39;00m file \u001B[38;5;129;01min\u001B[39;00m {\u001B[38;5;241m0\u001B[39m, \u001B[38;5;241m1\u001B[39m, \u001B[38;5;241m2\u001B[39m}:\n\u001B[1;32m    276\u001B[0m     \u001B[38;5;28;01mraise\u001B[39;00m \u001B[38;5;167;01mValueError\u001B[39;00m(\n\u001B[1;32m    277\u001B[0m         \u001B[38;5;124mf\u001B[39m\u001B[38;5;124m\"\u001B[39m\u001B[38;5;124mIPython won\u001B[39m\u001B[38;5;124m'\u001B[39m\u001B[38;5;124mt let you open fd=\u001B[39m\u001B[38;5;132;01m{\u001B[39;00mfile\u001B[38;5;132;01m}\u001B[39;00m\u001B[38;5;124m by default \u001B[39m\u001B[38;5;124m\"\u001B[39m\n\u001B[1;32m    278\u001B[0m         \u001B[38;5;124m\"\u001B[39m\u001B[38;5;124mas it is likely to crash IPython. If you know what you are doing, \u001B[39m\u001B[38;5;124m\"\u001B[39m\n\u001B[1;32m    279\u001B[0m         \u001B[38;5;124m\"\u001B[39m\u001B[38;5;124myou can use builtins\u001B[39m\u001B[38;5;124m'\u001B[39m\u001B[38;5;124m open.\u001B[39m\u001B[38;5;124m\"\u001B[39m\n\u001B[1;32m    280\u001B[0m     )\n\u001B[0;32m--> 282\u001B[0m \u001B[38;5;28;01mreturn\u001B[39;00m \u001B[43mio_open\u001B[49m\u001B[43m(\u001B[49m\u001B[43mfile\u001B[49m\u001B[43m,\u001B[49m\u001B[43m \u001B[49m\u001B[38;5;241;43m*\u001B[39;49m\u001B[43margs\u001B[49m\u001B[43m,\u001B[49m\u001B[43m \u001B[49m\u001B[38;5;241;43m*\u001B[39;49m\u001B[38;5;241;43m*\u001B[39;49m\u001B[43mkwargs\u001B[49m\u001B[43m)\u001B[49m\n",
-      "\u001B[0;31mFileNotFoundError\u001B[0m: [Errno 2] No such file or directory: '../input/{{ day }}.txt'"
-     ]
-    }
-   ],
+   "execution_count": null,
+   "outputs": [],
    "source": [
+    "import logging\n",
     "import sys\n",
-    "\n",
-    "sys.path.append(\"..\")\n",
-    "from utils import timer\n",
     "from ctypes import CDLL\n",
     "\n",
-    "c_utils = CDLL(\"../utils_.so\")\n",
+    "sys.path.append(\"..\")\n",
+    "import utilsp\n",
+    "\n",
+    "logger = utilsp.get_logger(\"{{ day }}\", logging.DEBUG)\n",
+    "c_utils = CDLL(\"../utilsc.so\")\n",
     "\n",
     "with open(\"../input/{{ day }}.txt\") as f:\n",
-    "    INPUT = list(map(str, f.readlines()))"
+    "    INPUT = f.read()\n",
+    "logger.info(\"initialization complete!\")"
    ],
    "metadata": {
     "collapsed": false,
@@ -79,13 +69,13 @@
    "execution_count": null,
    "outputs": [],
    "source": [
-    "@timer\n",
+    "@utilsp.timer\n",
     "def part1(input_):\n",
     "    result = None\n",
     "    return result\n",
     "\n",
     "\n",
-    "print(\"Solution part 1:\", part1(INPUT))"
+    "print(\"solution part 1:\", part1(INPUT))"
    ],
    "metadata": {
     "collapsed": false,
@@ -111,13 +101,13 @@
    "execution_count": null,
    "outputs": [],
    "source": [
-    "@timer\n",
+    "@utilsp.timer\n",
     "def part2(input_):\n",
     "    result = None\n",
     "    return result\n",
     "\n",
     "\n",
-    "print(\"Solution part 2:\", part2(INPUT))"
+    "print(\"solution part 2:\", part2(INPUT))"
    ],
    "metadata": {
     "collapsed": false,
