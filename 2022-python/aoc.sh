@@ -1,12 +1,13 @@
 #! /bin/bash
 
 # commandline utility
-# usage: aoc <command>
+# usage: ./aoc.sh <command>
 # commands:
 #   - init - setup dev environment
-#   - build - compile aoc_utils.c to aoc_utils.so
+#   - build - compile utils_.c to utils_.so
 #   - run - start jupyter notebook server
 #   - new - create new notebook
+#   - check - run pre-commit hook and check for errors
 
 function init() {
     python -m venv venv
@@ -48,6 +49,11 @@ function new() {
 
     }
 
+function check() {
+    pre-commit run --all-files
+    jupyter execute notebooks/*
+}
+
 case $1 in
     init)
         init
@@ -61,12 +67,16 @@ case $1 in
     new)
         new
         ;;
+    check)
+        check
+        ;;
     *)
         echo "usage: aoc <command>"
         echo "commands:"
         echo "  - init - setup dev environment"
-        echo "  - build - compile aoc_utils.c to aoc_utils.so"
+        echo "  - build - compile utils_.c to utils_.so"
         echo "  - run - start jupyter notebook server"
         echo "  - new - create new notebook"
+        echo "  - check - run pre-commit hook and check for errors"
         ;;
 esac
