@@ -4,3 +4,11 @@
 
 Solutions to the puzzles from [Advent of Code](https://adventofcode.com/).
 
+## How to run
+```
+$ git clone https://github.com/romanpeters/advent-of-code
+$ cd 2022-python
+$ source ./aoc.sh init
+$ ./aoc.sh run 
+```
+Or click on the Binder badge above to open a cloud-hosted version.

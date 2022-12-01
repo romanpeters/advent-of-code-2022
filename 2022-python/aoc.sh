@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 # commandline utility
 # usage: ./aoc.sh <command>
@@ -10,8 +10,17 @@
 #   - check - run pre-commit hook and check for errors
 
 function init() {
-    python -m venv venv
-    source venv/bin/activate
+    # check if the script is run with 'source' command
+    if [[ $0 != $BASH_SOURCE ]]; then
+        # if yes, activate venv
+        python3 -m venv venv
+        source venv/bin/activate
+    else
+        # if no, print message
+        echo "Please run this command with 'source'"
+        echo "Example: source ./aoc.sh init"
+        exit 1
+    fi
     pip install -r requirements.txt
     pre-commit install
     cc -shared -fPIC -o utils_.so utils_.c
@@ -51,7 +60,7 @@ function new() {
 
 function check() {
     pre-commit run --all-files
-    jupyter execute notebooks/*
+    time jupyter execute notebooks/*
 }
 
 case $1 in
@@ -71,7 +80,7 @@ case $1 in
         check
         ;;
     *)
-        echo "usage: aoc <command>"
+        echo "usage: source|sh ./aoc.sh <command>"
         echo "commands:"
         echo "  - init - setup dev environment"
         echo "  - build - compile utils_.c to utils_.so"
