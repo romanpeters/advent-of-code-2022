@@ -7,7 +7,7 @@
 #   - build - compile utilsc.c to utilsc.so
 #   - run - start jupyter notebook server
 #   - new - create new notebook
-#   - check - run pre-commit hook and check for errors
+#   - test - run pre-commit hook and tests
 
 function init() {
     # check if the script is run with 'source' command
@@ -58,9 +58,9 @@ function new() {
 
     }
 
-function check() {
+function test() {
     pre-commit run --all-files
-    time jupyter execute notebooks/*
+    pytest
 }
 
 case $1 in
@@ -76,8 +76,8 @@ case $1 in
     new)
         new
         ;;
-    check)
-        check
+    test)
+        test
         ;;
     *)
         echo "usage: source|sh ./aoc.sh <command>"
@@ -86,6 +86,6 @@ case $1 in
         echo "  - build - compile utilsc.c to utilsc.so"
         echo "  - run - start jupyter notebook server"
         echo "  - new - create new notebook"
-        echo "  - check - run pre-commit hook and check for errors"
+        echo "  - test - run pre-commit hook and tests"
         ;;
 esac

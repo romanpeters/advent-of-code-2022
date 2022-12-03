@@ -21,3 +21,6 @@ venv.bak/
 
 # Fleet
 .fleet/
+
+# specific
+notebooks/*.py
