@@ -3,6 +3,7 @@
   {
    "cell_type": "markdown",
    "source": [
+    "# {{ day }}\n",
     "--- part 1"
    ],
    "metadata": {
@@ -26,13 +27,25 @@
     "logger = utilsp.get_logger(\"{{ day }}\", logging.DEBUG)\n",
     "\n",
     "with open(\"../input/{{ day }}.txt\") as f:\n",
-    "    INPUT = f.read().split('\\n')\n",
+    "    INPUT = f.read().split(\"\\n\")\n",
     "logger.info(\"initialization complete!\")"
    ],
    "metadata": {
     "collapsed": false,
     "pycharm": {
      "name": "#%%\n"
+    }
+   }
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "# Solution Part One"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "pycharm": {
+     "name": "#%% md\n"
     }
    }
   },
@@ -81,6 +94,18 @@
    }
   },
   {
+   "cell_type": "markdown",
+   "source": [
+    "# Solution Part Two"
+   ],
+   "metadata": {
+    "collapsed": false,
+    "pycharm": {
+     "name": "#%% md\n"
+    }
+   }
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "outputs": [],
@@ -89,7 +114,6 @@
     "def part2(input_):\n",
     "    result = 0\n",
     "    return result\n",
-    "\n",
     "\n",
     "\n",
     "print(\"solution part 2:\", part2(INPUT))"
