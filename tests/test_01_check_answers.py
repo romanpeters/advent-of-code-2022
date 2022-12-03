@@ -16,11 +16,20 @@ answers = {
 
 
 def test_check_answers():
+    try:
+        os.chdir("notebooks")
+    except FileNotFoundError:
+        pass
+    assert os.getcwd().endswith("notebooks")
+    sys.path.append(".")
+    sys.path.append("..")
+
     """Imports the notebooks/dayXX.py files and checks the answers"""
-    os.chdir("notebooks")
-    sys.path.append(os.getcwd())
-    print("let's check the answers")
-    for day in Path(".").glob("day*.py"):
+    py_files = Path(".").glob("day*.py")
+    assert len([p for p in py_files]) == len(
+        answers.keys()
+    ), f"Found {len([p for p in py_files])} notebooks, expected {len(answers.keys())}"
+    for day in py_files:
         logging.info(f"Checking {day}")
         day_module = __import__(day.stem)
         assert answers[day.stem]["part1"] == getattr(day_module, "part1")(
