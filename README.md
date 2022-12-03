@@ -1,3 +1,4 @@
+![Tests](https://github.com/romanpeters/advent-of-code-2022/actions/workflows/python-app.yml/badge.svg)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/romanpeters/advent-of-code-2022/HEAD?labpath=notebooks)
 
 # Advent of Code 2022

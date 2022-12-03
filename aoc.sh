@@ -8,6 +8,7 @@
 #   - run - start jupyter notebook server
 #   - new - create new notebook
 #   - test - run pre-commit hook and tests
+#   - push - push and update Binder
 
 function init() {
     # check if the script is run with 'source' command
@@ -79,6 +80,9 @@ case $1 in
     test)
         test
         ;;
+    push)
+        git push origin main && sleep 5 && open 'https://mybinder.org/v2/gh/romanpeters/advent-of-code-2022/HEAD?labpath=notebooks' -g
+        ;;
     *)
         echo "usage: source|sh ./aoc.sh <command>"
         echo "commands:"
@@ -87,5 +91,6 @@ case $1 in
         echo "  - run - start jupyter notebook server"
         echo "  - new - create new notebook"
         echo "  - test - run pre-commit hook and tests"
+        echo "  - push - push changes and update binder"
         ;;
 esac
