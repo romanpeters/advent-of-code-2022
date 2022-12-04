@@ -2,7 +2,7 @@ import os
 import sys
 
 
-def set_cwd_notebooks():
+def set_path():
     try:
         os.chdir("notebooks")
     except FileNotFoundError:
@@ -10,3 +10,6 @@ def set_cwd_notebooks():
     assert os.getcwd().endswith("notebooks")
     sys.path.append(".")
     sys.path.append("..")
+
+
+set_path()
