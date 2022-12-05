@@ -1,18 +1,32 @@
 {
     "day01": {
-        "part1": 71300,
-        "part2": 209691
+        "answers": {
+            "part1": 71300,
+            "part2": 209691
+        }
     },
     "day02": {
-        "part1": 14827,
-        "part2": 13889
+        "answers": {
+            "part1": 14827,
+            "part2": 13889
+        }
     },
     "day03": {
-        "part1": 7817,
-        "part2": 2444
+        "answers": {
+            "part1": 7817,
+            "part2": 2444
+        }
     },
     "day04": {
-        "part1": 464,
-        "part2": 770
+        "answers": {
+            "part1": 464,
+            "part2": 770
+        }
+    },
+    "day05": {
+        "answers": {
+            "part1": "SVFDLGLWV",
+            "part2": "DCVTCVPCL"
+        }
     }
 }
