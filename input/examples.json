@@ -1,0 +1,38 @@
+{
+    "day01": {
+        "input": "1000\n2000\n3000\n\n4000\n\n5000\n6000\n\n7000\n8000\n9000\n\n10000",
+
+        "answers": {
+            "part1": 24000,
+            "part2": 45000
+        }
+    },
+    "day02": {
+        "input": "A Y\nB X\nC Z",
+        "answers": {
+            "part1": 15,
+            "part2": 12
+        }
+    },
+    "day03": {
+        "input": "vJrwpWtwJgWrhcsFMMfFFhFp\njqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL\nPmmdzqPrVvPwwTWBwg\nwMqvLMZHhHMvwLHjbvcjnnSBnvTQFn\nttgJtRGJQctTZtZT\nCrZsJsPPZsGzwwsLwLmpwMDw",
+        "answers": {
+            "part1": 157,
+            "part2": 70
+        }
+    },
+    "day04": {
+        "input": "2-4,6-8\n2-3,4-5\n5-7,7-9\n2-8,3-7\n6-6,4-6\n2-6,4-8",
+        "answers": {
+            "part1": 2,
+            "part2": 4
+        }
+    },
+    "day05": {
+        "input": "    [D]    \n[N] [C]    \n[Z] [M] [P]\n 1   2   3 \n\nmove 1 from 2 to 1\nmove 3 from 1 to 3\nmove 2 from 2 to 1\nmove 1 from 1 to 2",
+        "answers": {
+            "part1": "CMZ",
+            "part2": "MCD"
+        }
+    }
+}

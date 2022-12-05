@@ -2,6 +2,7 @@
 import logging
 from pathlib import Path
 import json
+import utilsp
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -18,10 +19,11 @@ def test_check_answers():
     for day in Path(".").glob("*.py"):
         logging.info(f"Checking {day}")
         day_module = __import__(day.stem)
-        assert answers[day.stem]["part1"] == getattr(day_module, "part1")(
-            getattr(day_module, "INPUT")
+        data = utilsp.get_data(day.stem)
+        assert answers[day.stem]["answers"]["part1"] == getattr(day_module, "part1")(
+            data.input
         )
-        assert answers[day.stem]["part2"] == getattr(day_module, "part2")(
-            getattr(day_module, "INPUT")
+        assert answers[day.stem]["answers"]["part2"] == getattr(day_module, "part2")(
+            data.input
         )
     logging.info("All answers correct")

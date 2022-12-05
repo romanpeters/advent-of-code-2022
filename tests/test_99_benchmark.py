@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import logging
 import pytest
+import utilsp
 
 
 logger = logging.getLogger(__name__)
@@ -22,6 +23,6 @@ def test_speed(benchmark, input):
     except ModuleNotFoundError:
         logging.info(f"Skipping {day} {part}")
         return
-    INPUT = getattr(day_module, "INPUT")
+    data = utilsp.get_data(day)
     benchmark.name = f"{day} {part}"
-    benchmark(getattr(day_module, part), INPUT)
+    benchmark(getattr(day_module, part), data.input)

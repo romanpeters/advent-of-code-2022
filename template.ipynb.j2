@@ -2,19 +2,23 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "source": [
-    "# --- Part One ---"
-   ],
    "metadata": {
-    "collapsed": false,
     "pycharm": {
      "name": "#%% md\n"
     }
-   }
+   },
+   "source": [
+    "# --- Part One ---"
+   ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
+   "metadata": {
+    "pycharm": {
+     "name": "#%%\n"
+    }
+   },
    "outputs": [],
    "source": [
     "import logging\n",
@@ -23,127 +27,114 @@
     "sys.path.append(\"..\")\n",
     "import utilsp\n",
     "\n",
-    "logger = utilsp.get_logger(\"{{ day }}\", logging.DEBUG)\n",
+    "logger = utilsp.get_logger(\"{{ day }}\", logging.INFO)\n",
+    "data = utilsp.get_data(\"{{ day }}\")\n",
     "\n",
-    "with open(\"../input/{{ day }}.txt\") as f:\n",
-    "    INPUT = f.read().split(\"\\n\")\n",
     "logger.info(\"initialization complete!\")"
-   ],
-   "metadata": {
-    "collapsed": false,
-    "pycharm": {
-     "name": "#%%\n"
-    }
-   }
+   ]
   },
   {
    "cell_type": "markdown",
-   "source": [
-    "## Solution Part One"
-   ],
    "metadata": {
-    "collapsed": false,
     "pycharm": {
      "name": "#%% md\n"
     }
-   }
+   },
+   "source": [
+    "## Solution Part One"
+   ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "outputs": [],
-   "source": [],
    "metadata": {
-    "collapsed": false,
     "pycharm": {
      "name": "#%%\n"
     }
-   }
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
+   },
    "outputs": [],
    "source": [
+    "def parsed(input_: str) -> list:\n",
+    "    return input_.split(\"\\n\")\n",
+    "\n",
+    "\n",
     "@utilsp.timer\n",
     "def part1(input_):\n",
+    "    parsed_input = parsed(input_)\n",
     "    result = 0\n",
     "    return result\n",
     "\n",
     "\n",
-    "print(\"solution part 1:\", part1(INPUT))"
-   ],
-   "metadata": {
-    "collapsed": false,
-    "pycharm": {
-     "name": "#%%\n"
-    }
-   }
+    "# utilsp.test(func=part1, input_=data.example_input, expected=data.test_answer1)\n",
+    "\n",
+    "print(\"solution part 1:\", part1(data.input))"
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {
+    "pycharm": {
+     "name": "#%% md\n"
+    }
+   },
    "source": [
     "# --- Part Two ---"
-   ],
-   "metadata": {
-    "collapsed": false,
-    "pycharm": {
-     "name": "#%% md\n"
-    }
-   }
+   ]
   },
   {
    "cell_type": "markdown",
-   "source": [
-    "## Solution Part Two"
-   ],
    "metadata": {
-    "collapsed": false,
     "pycharm": {
      "name": "#%% md\n"
     }
-   }
+   },
+   "source": [
+    "## Solution Part Two"
+   ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
+   "metadata": {
+    "pycharm": {
+     "name": "#%%\n"
+    }
+   },
    "outputs": [],
    "source": [
     "@utilsp.timer\n",
     "def part2(input_):\n",
+    "    parsed_input = parsed(input_)\n",
     "    result = 0\n",
     "    return result\n",
     "\n",
     "\n",
-    "print(\"solution part 2:\", part2(INPUT))"
-   ],
-   "metadata": {
-    "collapsed": false,
-    "pycharm": {
-     "name": "#%%\n"
-    }
-   }
+    "# utilsp.test(func=part1, input_=data.example_input, expected=data.test_answer1)\n",
+    "\n",
+    "print(\"solution part 2:\", part2(data.input))"
+   ]
   }
  ],
  "metadata": {
+  "celltoolbar": "Tags",
   "kernelspec": {
-   "display_name": "Python 3",
+   "display_name": "Python 3 (ipykernel)",
    "language": "python",
    "name": "python3"
   },
   "language_info": {
    "codemirror_mode": {
     "name": "ipython",
-    "version": 2
+    "version": 3
    },
    "file_extension": ".py",
    "mimetype": "text/x-python",
    "name": "python",
    "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython2",
-   "version": "2.7.6"
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
   }
  },
  "nbformat": 4,
- "nbformat_minor": 0
+ "nbformat_minor": 1
 }

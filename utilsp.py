@@ -3,6 +3,34 @@ Shared functions for Advent of Code
 """
 import time
 import logging
+import dataclasses
+import json
+
+
+def test(func, input_: str, expected) -> None:
+    assert (
+        func(input_) == expected
+    ), f"Test failed for {func.__name__}. Expected {expected}, got {func(input_)}"
+
+
+@dataclasses.dataclass
+class InputData:
+    input: str = ""
+    example_input: str = ""
+    test_answer1 = None
+    test_answer2 = None
+
+
+def get_data(day: str) -> InputData:
+    data = InputData()
+    with open(f"../input/{day}.txt") as f:
+        data.input = f.read()
+    with open(f"../input/examples.json") as f:
+        examples = json.load(f)
+    data.example_input = examples[day].get("input", "")
+    data.test_answer1 = examples[day]["answers"].get("part1", None)
+    data.test_answer2 = examples[day]["answers"].get("part2", None)
+    return data
 
 
 def timer(func):

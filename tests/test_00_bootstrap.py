@@ -19,7 +19,7 @@ def generate_answers_template(path: Path, day: str):
     with open(path, "r") as f:
         answers = json.load(f)
     if day not in answers.keys():
-        answers[day] = {"part1": None, "part2": None}
+        answers[day] = {"answers": {"part1": None, "part2": None}}
         with open(path, "w") as f:
             json.dump(answers, f, indent=4, sort_keys=True)
 
