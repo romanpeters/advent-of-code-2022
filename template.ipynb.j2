@@ -25,10 +25,10 @@
     "import sys\n",
     "\n",
     "sys.path.append(\"..\")\n",
-    "import utilsp\n",
+    "from utilsp import get_logger, get_data, timer, test\n",
     "\n",
-    "logger = utilsp.get_logger(\"{{ day }}\", logging.INFO)\n",
-    "data = utilsp.get_data(\"{{ day }}\")\n",
+    "logger = get_logger(\"{{ day }}\", logging.INFO)\n",
+    "data = get_data(\"{{ day }}\")\n",
     "\n",
     "logger.info(\"initialization complete!\")"
    ]
@@ -58,16 +58,16 @@
     "    return input_.split(\"\\n\")\n",
     "\n",
     "\n",
-    "@utilsp.timer\n",
+    "@timer\n",
     "def part1(input_):\n",
     "    parsed_input = parsed(input_)\n",
     "    result = 0\n",
     "    return result\n",
     "\n",
     "\n",
-    "# utilsp.test(func=part1, input_=data.example_input, expected=data.test_answer1)\n",
-    "\n",
-    "print(\"solution part 1:\", part1(data.input))"
+    "# test(func=part1, input_=data.example_input, expected=data.test_answer1)\n",
+    "print(\"test solution part 1:\", part1(data.example_input))\n",
+    "# print(\"solution part 1:\", part1(data.input))"
    ]
   },
   {
@@ -102,16 +102,16 @@
    },
    "outputs": [],
    "source": [
-    "@utilsp.timer\n",
+    "@timer\n",
     "def part2(input_):\n",
     "    parsed_input = parsed(input_)\n",
     "    result = 0\n",
     "    return result\n",
     "\n",
     "\n",
-    "# utilsp.test(func=part1, input_=data.example_input, expected=data.test_answer1)\n",
-    "\n",
-    "print(\"solution part 2:\", part2(data.input))"
+    "# test(func=part1, input_=data.example_input, expected=data.test_answer1)\n",
+    "print(\"test solution part 2:\", part2(data.example_input))\n",
+    "# print(\"solution part 2:\", part2(data.input))"
    ]
   }
  ],
