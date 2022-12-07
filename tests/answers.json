@@ -28,5 +28,17 @@
             "part1": "SVFDLGLWV",
             "part2": "DCVTCVPCL"
         }
+    },
+    "day06": {
+        "answers": {
+            "part1": 1804,
+            "part2": 2508
+        }
+    },
+    "day07": {
+        "answers": {
+            "part1": 2061777,
+            "part2": 4473403
+        }
     }
 }
