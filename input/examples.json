@@ -34,5 +34,12 @@
             "part1": "CMZ",
             "part2": "MCD"
         }
+    },
+    "day06": {
+        "input": "mjqjpqmgbljsphdztnvjfqwrcgsmlb",
+        "answers": {
+            "part1": 7,
+            "part2": 19
+        }
     }
 }
