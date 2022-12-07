@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import logging
 import pytest
 import utilsp
@@ -25,4 +24,4 @@ def test_speed(benchmark, input):
         return
     data = utilsp.get_data(day)
     benchmark.name = f"{day} {part}"
-    benchmark(getattr(day_module, part), data.input)
+    cap = benchmark(getattr(day_module, part), data.input)

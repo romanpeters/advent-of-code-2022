@@ -24,3 +24,5 @@ venv.bak/
 
 # specific
 notebooks/*.py
+tests/pytest.log
+tests/benchmark.txt

@@ -61,7 +61,8 @@ function new() {
 
 function test() {
     pre-commit run --all-files
-    pytest
+    pytest | tee tests/pytest.log
+    python tests/update_readme.py
 }
 
 case $1 in
