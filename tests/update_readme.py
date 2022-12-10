@@ -8,7 +8,7 @@ def create_benchmark_file():
 
     benchmark = []
     for line in lines:
-        if line.startswith("-" * 20) or benchmark:
+        if (line.startswith("-" * 20) and "benchmark" in line) or benchmark:
             if line.startswith("=" * 20):
                 break
             benchmark.append(line)
