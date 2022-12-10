@@ -51,6 +51,7 @@ function new() {
         # notebooks exist, create new notebook
         last_notebook=$(ls -1 notebooks | tail -n 1)
         last_day=$(echo $last_notebook | cut -d'.' -f1 | cut -d'y' -f2)
+        last_day=$(echo $last_day | sed 's/^0*//')
         new_day=$((last_day + 1))
         touch input/day$(printf "%02d" $new_day).txt
         jinja -D day day$(printf "%02d" $new_day) template.ipynb.j2 > notebooks/day$(printf "%02d" $new_day).ipynb

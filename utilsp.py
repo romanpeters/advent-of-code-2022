@@ -28,6 +28,7 @@ def get_data(day: str) -> InputData:
     with open(f"../input/examples.json") as f:
         examples = json.load(f)
     data.example_input = examples[day].get("input", "")
+    data.example_input2 = examples[day].get("input2", "")
     data.test_answer1 = examples[day]["answers"].get("part1", None)
     data.test_answer2 = examples[day]["answers"].get("part2", None)
     return data
