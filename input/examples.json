@@ -80,5 +80,12 @@
             "part1": 10605,
             "part2": 0
         }
+    },
+    "day12": {
+        "input": "Sabqponm\nabcryxxl\naccszExk\nacctuvwj\nabdefghi",
+        "answers": {
+            "part1": 31,
+            "part2": 29
+        }
     }
 }

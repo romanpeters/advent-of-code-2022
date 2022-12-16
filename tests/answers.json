@@ -64,5 +64,35 @@
             "part1": 99852,
             "part2": 25935263541
         }
+    },
+    "day12": {
+        "answers": {
+            "part1": 391,
+            "part2": 386
+        }
+    },
+    "day13": {
+        "answers": {
+            "part1": null,
+            "part2": null
+        }
+    },
+    "day14": {
+        "answers": {
+            "part1": null,
+            "part2": null
+        }
+    },
+    "day15": {
+        "answers": {
+            "part1": null,
+            "part2": null
+        }
+    },
+    "day16": {
+        "answers": {
+            "part1": null,
+            "part2": null
+        }
     }
 }

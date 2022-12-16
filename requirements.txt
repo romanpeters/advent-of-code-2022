@@ -9,3 +9,4 @@ pytest-benchmark==4.0.0
 # puzzles
 matplotlib==3.6.2
 tqdm==4.64.1
+networkx==2.8.8
