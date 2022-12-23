@@ -27,9 +27,7 @@ def generate_answers_template(path: Path, day: str):
 def test_convert_notebooks():
     """Convert all notebooks in /notebooks to .py files"""
     logging.info("Converting notebooks to .py files")
-    assert (
-        len(list(Path(".").glob("*.ipynb"))) > 0
-    ), f"No notebooks found in {Path('.').absolute()}"
+    assert len(list(Path(".").glob("*.ipynb"))) > 0, f"No notebooks found in {Path('.').absolute()}"
     for notebook in Path(".").glob("*.ipynb"):
         logging.info(f"Converting {notebook}")
         nb = nbformat.read(notebook, as_version=4)

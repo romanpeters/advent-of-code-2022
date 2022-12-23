@@ -20,10 +20,6 @@ def test_check_answers():
         logging.info(f"Checking {day}")
         day_module = __import__(day.stem)
         data = utilsp.get_data(day.stem)
-        assert answers[day.stem]["answers"]["part1"] == getattr(day_module, "part1")(
-            data.input
-        )
-        assert answers[day.stem]["answers"]["part2"] == getattr(day_module, "part2")(
-            data.input
-        )
+        assert answers[day.stem]["answers"]["part1"] == getattr(day_module, "part1")(data.input)
+        assert answers[day.stem]["answers"]["part2"] == getattr(day_module, "part2")(data.input)
     logging.info("All answers correct")

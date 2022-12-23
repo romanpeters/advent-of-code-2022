@@ -8,9 +8,7 @@ import json
 
 
 def test(func, input_: str, expected) -> None:
-    assert (
-        func(input_) == expected
-    ), f"Test failed for {func.__name__}. Expected {expected}, got {func(input_)}"
+    assert func(input_) == expected, f"Test failed for {func.__name__}. Expected {expected}, got {func(input_)}"
 
 
 @dataclasses.dataclass

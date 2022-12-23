@@ -40,9 +40,7 @@ def update_readme():
 
 
 def main():
-    assert os.path.exists("tests") and os.path.exists(
-        "README.md"
-    ), "Execute from project root"
+    assert os.path.exists("tests") and os.path.exists("README.md"), "Execute from project root"
     create_benchmark_file()
     update_readme()
 
