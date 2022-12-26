@@ -1,6 +1,6 @@
 import logging
 import pytest
-import utilsp
+import aoc
 
 
 logger = logging.getLogger(__name__)
@@ -22,6 +22,6 @@ def test_speed(benchmark, input):
     except ModuleNotFoundError:
         logging.info(f"Skipping {day} {part}")
         return
-    data = utilsp.get_data(day)
+    data = aoc.get_data(day)
     benchmark.name = f"{day} {part}"
     cap = benchmark(getattr(day_module, part), data.input)
